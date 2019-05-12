@@ -7,6 +7,10 @@
 	box-sizing: inherit;
 }
 
+html {
+	background-color: #FAFAFA;
+}
+
 body {
 	font-family: 'Hammersmith One', sans-serif;
 }
