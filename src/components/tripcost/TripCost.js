@@ -28,9 +28,14 @@ const TripCost = () => {
 		setExpanded(newExpanded);
 	};
 
+	const onOverlayClick = (e) => {
+		if (expanded === null) return;
+		updateExpanded(null);
+		e.stopPropagation();
+	}
+
 	return (
 		<>
-			<Overlay isActive={expanded !== null} onClick={expanded !== null ? updateExpanded.bind(null, null) : null} />
 			<Placeholder inUse={expanded === 'vehicleInfo'} />
 			<VehicleInfo
 				toggleExpanded={updateExpanded.bind(null, 'vehicleInfo')}
@@ -40,6 +45,7 @@ const TripCost = () => {
 				toggleExpanded={updateExpanded.bind(null, 'routeSelector')}
 				isExpanded={expanded === 'routeSelector'}
 			/>
+			<Overlay isActive={expanded !== null} onClick={onOverlayClick} />
 		</>
 	);
 };

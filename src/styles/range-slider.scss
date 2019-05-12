@@ -1,9 +1,22 @@
-.route-selector__slider-wrapper {
-	padding-bottom: 30px;
+.rangeslider-wrapper {
+	padding-bottom: 20px;
 
 	.rangeslider__handle,
 	.rangeslider__fill {
 		animation: fade-in 0.85s ease-in-out;
+	}
+
+	.rangeslider__handle {
+		background: radial-gradient(circle, #e8e8e8 0%, #fafafa 100%);
+
+		&:after {
+			background: transparent;
+			box-shadow: none;
+		}
+	}
+
+	.rangeslider__labels {
+		margin-top: 15px;
 	}
 
 	.rangeslider__label-item[data-value="0"] {
@@ -17,6 +30,17 @@
 		transform: translate3d(0, 0, 0);
 	}
 }
+
+
+.route-selector__slider .rangeslider__fill {
+	background: linear-gradient(to right, #6b8a0d 0vw, #252f03 100vw);
+}
+
+
+.vehicle-info__slider .rangeslider__fill {
+	background: linear-gradient(to right, #0b8ba9 0vw, #03292f 100vw);
+}
+
 
 @keyframes fade-in {
     0% { opacity: 0; }
