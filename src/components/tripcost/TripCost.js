@@ -9,7 +9,7 @@ const Overlay = styled.div`
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: ${props => props.isActive ? 'rgba(255, 255, 255, 0.4)' : 'transparent'};
+	background-color: ${props => props.isActive ? 'rgba(255, 255, 255, 0.45)' : 'transparent'};
 	pointer-events: ${props => props.isActive ? 'auto' : 'none'};
 	transition: background-color 0.25s ease-in-out;
 `;

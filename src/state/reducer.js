@@ -9,6 +9,15 @@ const reducer = (state, action) => {
 				}
 			};
 
+		case 'updateRoute':
+			return {
+				...state,
+				route: {
+					...state.route,
+					...action.route
+				}
+			};
+
 		default:
 			return state;
 	}
