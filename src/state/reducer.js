@@ -22,6 +22,12 @@ const reducer = (state, action) => {
 				}
 			};
 
+		case 'updatePassengers':
+			return {
+				...state,
+				passengers: action.passengers
+			};
+
 		default:
 			return state;
 	}

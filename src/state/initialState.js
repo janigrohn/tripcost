@@ -38,6 +38,7 @@ const initialState = {
 	activeTab: 'tripcost',
 	vehicles: getVehicles(),
 	route: getRoute(),
+	passengers: 1,
 };
 
 export default initialState;

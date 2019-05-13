@@ -32,6 +32,18 @@
 }
 
 
+.passengers__slider {
+	.rangeslider__fill {
+		background: linear-gradient(to right, #e27b21 0vw, #522701 100vw);
+	}
+
+	.rangeslider__label-item[data-value="1"] {
+		left: 0 !important;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+
 .route-selector__slider .rangeslider__fill {
 	background: linear-gradient(to right, #6b8a0d 0vw, #252f03 100vw);
 }
