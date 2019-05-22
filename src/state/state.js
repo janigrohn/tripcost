@@ -1,11 +1,15 @@
-import React, {createContext, useContext, useReducer} from 'react';
+export const getVehicle = () => ({
+	fuelType: 'gasoline',
+	fuelConsumption: 5.5,
+});
 
-export const StateContext = createContext();
+export const getRoute = () => ({
+	distance: 400,
+});
 
-export const StateProvider = ({ reducer, initialState, children }) =>(
-	<StateContext.Provider value={useReducer(reducer, initialState)}>
-		{children}
-	</StateContext.Provider>
-);
+export const getPrices = () => ({
+	gasoline: 1.641,
+	diesel: 1.3
+});
 
-export const useStateValue = () => useContext(StateContext);
+export const getPassengers = () => 2;

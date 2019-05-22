@@ -1,8 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import { StateProvider } from '../state/state';
-import initialState from '../state/initialState';
-import reducer from '../state/reducer';
 import TripCost from './tripcost/TripCost';
 
 const AppContainer = styled.div`
@@ -17,11 +14,9 @@ const AppContainer = styled.div`
 
 const App = () => {
 	return (
-		<StateProvider initialState={initialState} reducer={reducer}>
-			<AppContainer>
-				<TripCost />
-			</AppContainer>
-		</StateProvider>
+		<AppContainer>
+			<TripCost />
+		</AppContainer>
 	);
 };
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from "styled-components";
-import { useStateValue } from '../../state/state';
 import { useMorphKeys } from 'react-morph';
 import Slider from 'react-rangeslider'
 
@@ -90,14 +89,7 @@ const Row = styled.div`
 `;
 
 
-const PassengersSelectorFull = ({ passengers, toggleExpanded, dispatch, morphs }) => {
-	const handleSliderChange = (value) => {
-		dispatch({
-			type: 'updatePassengers',
-			passengers: value,
-		});
-	};
-
+const PassengersSelectorFull = ({ passengers, setPassengers, toggleExpanded, morphs }) => {
 	return (
 		<WrapperExpanded {...morphs.wrapper}>
 			<Heading>
@@ -119,7 +111,7 @@ const PassengersSelectorFull = ({ passengers, toggleExpanded, dispatch, morphs }
 							step={1}
 							value={passengers}
 							tooltip={false}
-							onChange={handleSliderChange}
+							onChange={value => setPassengers(value)}
 							labels={{
 								1: '1',
 								9: '9',
@@ -147,9 +139,7 @@ const PassengersSelectorSmall = ({ passengers, toggleExpanded, morphs }) => {
 }
 
 
-const PassengersSelector = ({ isExpanded, toggleExpanded }) => {
-	const [{ passengers }, dispatch] = useStateValue();
-
+const PassengersSelector = ({ passengers, setPassengers, isExpanded, toggleExpanded }) => {
 	const morphs = useMorphKeys([
 		'wrapper',
 		'title'
@@ -159,13 +149,15 @@ const PassengersSelector = ({ isExpanded, toggleExpanded }) => {
 
 	return (
 		isExpanded
-			? <PassengersSelectorFull passengers={passengers} toggleExpanded={toggleExpanded} dispatch={dispatch} morphs={morphs} />
+			? <PassengersSelectorFull passengers={passengers} setPassengers={setPassengers} toggleExpanded={toggleExpanded} morphs={morphs} />
 			: <PassengersSelectorSmall passengers={passengers} toggleExpanded={toggleExpanded} morphs={morphs} />
 	);
 };
 
 
 PassengersSelector.propTypes = {
+	passengers: PropTypes.number.isRequired,
+	setPassengers: PropTypes.func.isRequired,
 	toggleExpanded: PropTypes.func.isRequired,
 	isExpanded: PropTypes.bool.isRequired,
 };

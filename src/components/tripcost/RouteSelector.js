@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from "styled-components";
-import { useStateValue } from '../../state/state';
 import { useMorphKeys } from 'react-morph';
 import Slider from 'react-rangeslider'
 
@@ -90,7 +89,7 @@ const Row = styled.div`
 `;
 
 
-const RouteSelectorFull = ({ route, toggleExpanded, dispatch, morphs }) => {
+const RouteSelectorFull = ({ route, setRoute, toggleExpanded, morphs }) => {
 	const getSliderOptions = () => {
 		const options = { };
 		if (route.distance < 50) {
@@ -116,9 +115,9 @@ const RouteSelectorFull = ({ route, toggleExpanded, dispatch, morphs }) => {
 	const [sliderOptions, setSliderOptions] = useState(getSliderOptions());
 
 	const handleSliderChange = (value) => {
-		dispatch({
-			type: 'updateRoute',
-			route: { distance: value }
+		setRoute({
+			...route,
+			distance: value
 		});
 	};
 
@@ -177,9 +176,7 @@ const RouteSelectorSmall = ({ route, toggleExpanded, morphs }) => {
 }
 
 
-const RouteSelector = ({ isExpanded, toggleExpanded }) => {
-	const [{ route }, dispatch] = useStateValue();
-
+const RouteSelector = ({ route, setRoute, isExpanded, toggleExpanded }) => {
 	const morphs = useMorphKeys([
 		'wrapper',
 		'title'
@@ -189,13 +186,15 @@ const RouteSelector = ({ isExpanded, toggleExpanded }) => {
 
 	return (
 		isExpanded
-			? <RouteSelectorFull route={route} toggleExpanded={toggleExpanded} dispatch={dispatch} morphs={morphs} />
+			? <RouteSelectorFull route={route} setRoute={setRoute} toggleExpanded={toggleExpanded} morphs={morphs} />
 			: <RouteSelectorSmall route={route} toggleExpanded={toggleExpanded} morphs={morphs} />
 	);
 };
 
 
 RouteSelector.propTypes = {
+	route: PropTypes.object.isRequired,
+	setRoute: PropTypes.func.isRequired,
 	toggleExpanded: PropTypes.func.isRequired,
 	isExpanded: PropTypes.bool.isRequired,
 };

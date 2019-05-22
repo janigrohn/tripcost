@@ -4,6 +4,7 @@ import RouteSelector from './RouteSelector';
 import PassengersSelector from './PassengersSelector';
 import Totals from './Totals';
 import styled from "styled-components";
+import { getPrices, getVehicle, getRoute, getPassengers } from '../../state/state';
 
 const Overlay = styled.div`
 	position: fixed;
@@ -26,6 +27,10 @@ const Placeholder = styled.div`
 
 const TripCost = () => {
 	const [expanded, setExpanded] = useState(null);
+	const [vehicle, setVehicle] = useState(getVehicle());
+	const [route, setRoute] = useState(getRoute());
+	const [passengers, setPassengers] = useState(getPassengers());
+	const [prices, setPrices] = useState(getPrices());
 
 	const updateExpanded = (target) => {
 		const newExpanded = expanded === target ? null : target;
@@ -45,19 +50,30 @@ const TripCost = () => {
 				<VehicleInfo
 					toggleExpanded={updateExpanded.bind(null, 'vehicleInfo')}
 					isExpanded={expanded === 'vehicleInfo'}
+					vehicle={vehicle}
+					setVehicle={setVehicle}
 				/>
 				<Placeholder inUse={expanded === 'routeSelector'} />
 				<RouteSelector
 					toggleExpanded={updateExpanded.bind(null, 'routeSelector')}
 					isExpanded={expanded === 'routeSelector'}
+					route={route}
+					setRoute={setRoute}
 				/>
 				<Placeholder inUse={expanded === 'passengersSelector'} />
 				<PassengersSelector
 					toggleExpanded={updateExpanded.bind(null, 'passengersSelector')}
 					isExpanded={expanded === 'passengersSelector'}
+					passengers={passengers}
+					setPassengers={setPassengers}
 				/>
 			</div>
-			<Totals />
+			<Totals
+				vehicle={vehicle}
+				route={route}
+				passengers={passengers}
+				prices={prices}
+			/>
 			<Overlay isActive={expanded !== null} onClick={onOverlayClick} />
 		</>
 	);

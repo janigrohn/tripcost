@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from "styled-components";
-import { useStateValue } from '../../state/state';
 import { useMorphKeys } from 'react-morph';
 import Slider from 'react-rangeslider'
 
@@ -136,20 +135,16 @@ const RadioIndicator = styled.div`
 
 class VehicleInfoFull extends React.Component {
 	onConsumptionChange = (value) => {
-		this.props.dispatch({
-			type: 'updateVehicle',
-			vehicle: {
-				fuelConsumption: value
-			}
+		this.props.setVehicle({
+			...this.props.vehicle,
+			fuelConsumption: value
 		});
 	}
 
 	onFuelTypeChange = (e) => {
-		this.props.dispatch({
-			type: 'updateVehicle',
-			vehicle: {
-				fuelType: e.target.value
-			}
+		this.props.setVehicle({
+			...this.props.vehicle,
+			fuelType: e.target.value
 		});
 	}
 
@@ -224,9 +219,7 @@ const VehicleInfoSmall = ({ vehicle, toggleExpanded, morphs }) => {
 }
 
 
-const VehicleInfo = ({ toggleExpanded, isExpanded }) => {
-	const [{ vehicle }, dispatch] = useStateValue();
-
+const VehicleInfo = ({ vehicle, setVehicle, toggleExpanded, isExpanded }) => {
 	const morphs = useMorphKeys([
 		'wrapper',
 		'title',
@@ -236,13 +229,15 @@ const VehicleInfo = ({ toggleExpanded, isExpanded }) => {
 
 	return (
 		isExpanded
-			? <VehicleInfoFull vehicle={vehicle} toggleExpanded={toggleExpanded} dispatch={dispatch} morphs={morphs} />
+			? <VehicleInfoFull vehicle={vehicle} setVehicle={setVehicle} toggleExpanded={toggleExpanded} morphs={morphs} />
 			: <VehicleInfoSmall vehicle={vehicle} toggleExpanded={toggleExpanded} morphs={morphs} />
 	);
 };
 
 
 VehicleInfo.propTypes = {
+	vehicle: PropTypes.object.isRequired,
+	setVehicle: PropTypes.func.isRequired,
 	toggleExpanded: PropTypes.func.isRequired,
 	isExpanded: PropTypes.bool.isRequired,
 };

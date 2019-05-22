@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from "styled-components";
-import { useStateValue } from '../../state/state';
 
 const Wrapper = styled.div`
 	padding: 0 0.25rem;
@@ -15,13 +15,9 @@ const Row = styled.div`
 	border-top: solid 2px rgba(0, 0, 0, 0.15);
 `;
 
-const Totals = () => {
-	const [{ vehicle, route, prices, passengers }] = useStateValue();
-
+const Totals = ({ vehicle, route, prices, passengers }) => {
 	const getTotalPrice = () => (route.distance * vehicle.fuelConsumption / 100 * prices[vehicle.fuelType]).toFixed(2);
-
 	const getPricePerPassenger = () => (getTotalPrice() / passengers).toFixed(2);
-
 	const getPricePerKm = () => (getTotalPrice() / route.distance).toFixed(2);
 
 	return (
@@ -41,5 +37,13 @@ const Totals = () => {
 		</Wrapper>
 	);
 }
+
+Totals.propTypes = {
+	vehicle: PropTypes.object.isRequired,
+	route: PropTypes.object.isRequired,
+	prices: PropTypes.object.isRequired,
+	passengers: PropTypes.number.isRequired
+}
+
 
 export default Totals;
