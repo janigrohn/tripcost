@@ -22,7 +22,6 @@ const Placeholder = styled.div`
 	height: 120px;
 	margin: 0.5rem 0;
 	border-radius: 0.5rem;
-	border: solid 1px rgba(0, 0, 0, 0.1);
 `;
 
 const TripCost = () => {
@@ -31,10 +30,13 @@ const TripCost = () => {
 	const [route, setRoute] = useState(getRoute());
 	const [passengers, setPassengers] = useState(getPassengers());
 	const [prices, setPrices] = useState(getPrices());
+	const states = { expanded, vehicle, route, passengers, prices };
 
 	const updateExpanded = (target) => {
 		const newExpanded = expanded === target ? null : target;
 		setExpanded(newExpanded);
+		if (expanded === null) return;
+		localStorage.setItem(expanded, JSON.stringify(states[expanded]));
 	};
 
 	const onOverlayClick = (e) => {
@@ -46,24 +48,24 @@ const TripCost = () => {
 	return (
 		<>
 			<div>
-				<Placeholder inUse={expanded === 'vehicleInfo'} />
+				<Placeholder inUse={expanded === 'vehicle'} />
 				<VehicleInfo
-					toggleExpanded={updateExpanded.bind(null, 'vehicleInfo')}
-					isExpanded={expanded === 'vehicleInfo'}
+					toggleExpanded={updateExpanded.bind(null, 'vehicle')}
+					isExpanded={expanded === 'vehicle'}
 					vehicle={vehicle}
 					setVehicle={setVehicle}
 				/>
-				<Placeholder inUse={expanded === 'routeSelector'} />
+				<Placeholder inUse={expanded === 'route'} />
 				<RouteSelector
-					toggleExpanded={updateExpanded.bind(null, 'routeSelector')}
-					isExpanded={expanded === 'routeSelector'}
+					toggleExpanded={updateExpanded.bind(null, 'route')}
+					isExpanded={expanded === 'route'}
 					route={route}
 					setRoute={setRoute}
 				/>
-				<Placeholder inUse={expanded === 'passengersSelector'} />
+				<Placeholder inUse={expanded === 'passengers'} />
 				<PassengersSelector
-					toggleExpanded={updateExpanded.bind(null, 'passengersSelector')}
-					isExpanded={expanded === 'passengersSelector'}
+					toggleExpanded={updateExpanded.bind(null, 'passengers')}
+					isExpanded={expanded === 'passengers'}
 					passengers={passengers}
 					setPassengers={setPassengers}
 				/>
