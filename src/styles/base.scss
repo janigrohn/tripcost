@@ -7,11 +7,19 @@
 	box-sizing: inherit;
 }
 
+html,
+body,
+#root {
+	height: 100%;
+}
+
 html {
 	background-color: #FAFAFA;
 }
 
 body {
+	display: flex;
+    flex-direction: column;
 	font-family: 'Hammersmith One', sans-serif;
 }
 

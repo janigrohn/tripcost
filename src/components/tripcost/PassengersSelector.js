@@ -9,7 +9,7 @@ const Wrapper = styled.div`
 	height: 120px;
 	margin: 0.5rem 0;
 	border-radius: 0.5rem;
-	background: linear-gradient(to bottom, #fdbe30, #f38d35);
+	background: linear-gradient(to bottom, #fdbe30, #f79139);
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24), inset 0px 0px 15px 0px rgba(0,0,0,0.1);
 `;
 

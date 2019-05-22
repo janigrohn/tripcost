@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import VehicleInfo from './VehicleInfo';
 import RouteSelector from './RouteSelector';
 import PassengersSelector from './PassengersSelector';
+import Totals from './Totals';
 import styled from "styled-components";
 
 const Overlay = styled.div`
@@ -10,7 +11,7 @@ const Overlay = styled.div`
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: ${props => props.isActive ? 'rgba(255, 255, 255, 0.45)' : 'transparent'};
+	background-color: ${props => props.isActive ? 'rgba(250, 250, 250, 0.45)' : 'transparent'};
 	pointer-events: ${props => props.isActive ? 'auto' : 'none'};
 	transition: background-color 0.25s ease-in-out;
 `;
@@ -39,21 +40,24 @@ const TripCost = () => {
 
 	return (
 		<>
-			<Placeholder inUse={expanded === 'vehicleInfo'} />
-			<VehicleInfo
-				toggleExpanded={updateExpanded.bind(null, 'vehicleInfo')}
-				isExpanded={expanded === 'vehicleInfo'}
-			/>
-			<Placeholder inUse={expanded === 'routeSelector'} />
-			<RouteSelector
-				toggleExpanded={updateExpanded.bind(null, 'routeSelector')}
-				isExpanded={expanded === 'routeSelector'}
-			/>
-			<Placeholder inUse={expanded === 'passengersSelector'} />
-			<PassengersSelector
-				toggleExpanded={updateExpanded.bind(null, 'passengersSelector')}
-				isExpanded={expanded === 'passengersSelector'}
-			/>
+			<div>
+				<Placeholder inUse={expanded === 'vehicleInfo'} />
+				<VehicleInfo
+					toggleExpanded={updateExpanded.bind(null, 'vehicleInfo')}
+					isExpanded={expanded === 'vehicleInfo'}
+				/>
+				<Placeholder inUse={expanded === 'routeSelector'} />
+				<RouteSelector
+					toggleExpanded={updateExpanded.bind(null, 'routeSelector')}
+					isExpanded={expanded === 'routeSelector'}
+				/>
+				<Placeholder inUse={expanded === 'passengersSelector'} />
+				<PassengersSelector
+					toggleExpanded={updateExpanded.bind(null, 'passengersSelector')}
+					isExpanded={expanded === 'passengersSelector'}
+				/>
+			</div>
+			<Totals />
 			<Overlay isActive={expanded !== null} onClick={onOverlayClick} />
 		</>
 	);
