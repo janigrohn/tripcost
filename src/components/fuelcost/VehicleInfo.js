@@ -141,15 +141,15 @@ const VehicleInfoFull = ({ vehicle, setVehicle, toggleExpanded, morphs }) => {
 					<p>Fuel Price: {vehicle.fuelPrice.toFixed(2)}€/L</p>
 					<div className="vehicle-info__slider rangeslider-wrapper">
 						<Slider
-							min={0}
-							max={2.5}
+							min={0.5}
+							max={2.2}
 							step={0.01}
 							value={vehicle.fuelPrice}
 							tooltip={false}
 							onChange={onFuelPriceChange}
 							labels={{
-								0: `0€/L`,
-								2.5: `2,5€/L`,
+								0.5: `0,50€/L`,
+								2.2: `2,20€/L`,
 							}}
 						/>
 					</div>

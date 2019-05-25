@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-	padding: 0 0.25rem;
+	padding: 0.25rem 0.25rem 0 0.25rem;
 	margin-top: auto;
 `;
 

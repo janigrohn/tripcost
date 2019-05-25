@@ -1,3 +1,5 @@
+// Rangeslider
+
 .rangeslider-wrapper {
 	padding-bottom: 18px;
 
@@ -48,18 +50,30 @@
 }
 
 
+.vehicle-info__slider {
+	.rangeslider__fill {
+		background: linear-gradient(to right, #0b8ba9 0vw, #03292f 100vw);
+	}
+
+	.rangeslider__label-item[data-value="0.5"] {
+		left: 0 !important;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+
 .route-selector__slider .rangeslider__fill {
 	background: linear-gradient(to right, #6b8a0d 0vw, #252f03 100vw);
 }
-
-
-.vehicle-info__slider .rangeslider__fill {
-	background: linear-gradient(to right, #0b8ba9 0vw, #03292f 100vw);
-}
-
 
 @keyframes fade-in {
     0% { opacity: 0; }
 	70% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+// React-morph
+
+.rm-cloned {
+	will-change: transform, opacity;
 }
