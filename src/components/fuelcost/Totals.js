@@ -15,8 +15,8 @@ const Row = styled.div`
 	border-top: solid 2px rgba(0, 0, 0, 0.15);
 `;
 
-const Totals = ({ vehicle, route, prices, passengers }) => {
-	const getTotalPrice = () => (route.distance * vehicle.fuelConsumption / 100 * prices[vehicle.fuelType]).toFixed(2);
+const Totals = ({ vehicle, route, passengers }) => {
+	const getTotalPrice = () => (route.distance * vehicle.fuelConsumption / 100 * vehicle.fuelPrice).toFixed(2);
 	const getPricePerPassenger = () => (getTotalPrice() / passengers).toFixed(2);
 	const getPricePerKm = () => (getTotalPrice() / route.distance).toFixed(2);
 
@@ -41,7 +41,6 @@ const Totals = ({ vehicle, route, prices, passengers }) => {
 Totals.propTypes = {
 	vehicle: PropTypes.object.isRequired,
 	route: PropTypes.object.isRequired,
-	prices: PropTypes.object.isRequired,
 	passengers: PropTypes.number.isRequired
 }
 

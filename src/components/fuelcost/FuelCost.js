@@ -4,7 +4,7 @@ import RouteSelector from './RouteSelector';
 import PassengersSelector from './PassengersSelector';
 import Totals from './Totals';
 import styled from "styled-components";
-import { getPrices, getVehicle, getRoute, getPassengers } from '../../state/state';
+import { getVehicle, getRoute, getPassengers } from '../../state/state';
 
 const Overlay = styled.div`
 	position: fixed;
@@ -24,13 +24,12 @@ const Placeholder = styled.div`
 	border-radius: 0.5rem;
 `;
 
-const TripCost = () => {
+const FuelCost = () => {
 	const [expanded, setExpanded] = useState(null);
 	const [vehicle, setVehicle] = useState(getVehicle());
 	const [route, setRoute] = useState(getRoute());
 	const [passengers, setPassengers] = useState(getPassengers());
-	const [prices, setPrices] = useState(getPrices());
-	const states = { expanded, vehicle, route, passengers, prices };
+	const states = { expanded, vehicle, route, passengers };
 
 	const updateExpanded = (target) => {
 		const newExpanded = expanded === target ? null : target;
@@ -74,11 +73,10 @@ const TripCost = () => {
 				vehicle={vehicle}
 				route={route}
 				passengers={passengers}
-				prices={prices}
 			/>
 			<Overlay isActive={expanded !== null} onClick={onOverlayClick} />
 		</>
 	);
 };
 
-export default TripCost;
+export default FuelCost;

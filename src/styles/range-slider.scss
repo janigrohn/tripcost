@@ -1,5 +1,9 @@
 .rangeslider-wrapper {
-	padding-bottom: 20px;
+	padding-bottom: 18px;
+
+	.rangeslider {
+		margin: 16px 0;
+	}
 
 	.rangeslider__handle,
 	.rangeslider__fill {
@@ -16,7 +20,7 @@
 	}
 
 	.rangeslider__labels {
-		margin-top: 15px;
+		margin-top: 8px;
 	}
 
 	.rangeslider__label-item[data-value="0"] {

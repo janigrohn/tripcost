@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import TripCost from './tripcost/TripCost';
+import FuelCost from './fuelcost/FuelCost';
 
 const AppContainer = styled.div`
 	position: relative;
@@ -15,7 +15,7 @@ const AppContainer = styled.div`
 const App = () => {
 	return (
 		<AppContainer>
-			<TripCost />
+			<FuelCost />
 		</AppContainer>
 	);
 };
