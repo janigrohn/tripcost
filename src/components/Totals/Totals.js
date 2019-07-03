@@ -18,10 +18,11 @@ const Row = styled.div`
 const Totals = ({ vehicle, route, passengers }) => {
 	const getTotalPrice = () => (route.distance * vehicle.fuelConsumption / 100 * vehicle.fuelPrice).toFixed(2);
 	const getPricePerPassenger = () => (getTotalPrice() / passengers).toFixed(2);
-	const getPricePerKm = () => (getTotalPrice() / route.distance).toFixed(2);
+	const getPricePerKm = () => route.distance !== 0 ? (getTotalPrice() / route.distance).toFixed(2) : '0,00';
+	const getNeededFuel = () => (route.distance * vehicle.fuelConsumption / 100).toFixed(1);
 
 	return (
-		<Wrapper>
+		<Wrapper data-testid="totals">
 			<Row>
 				<span>Total cost: </span>
 				<span>{getTotalPrice().replace('.', ',')}€</span>
@@ -33,6 +34,10 @@ const Totals = ({ vehicle, route, passengers }) => {
 			<Row>
 				<span>Cost / km: </span>
 				<span>{getPricePerKm().replace('.', ',')}€</span>
+			</Row>
+			<Row>
+				<span>Fuel needed: </span>
+				<span>{getNeededFuel().replace('.', ',')}L</span>
 			</Row>
 		</Wrapper>
 	);

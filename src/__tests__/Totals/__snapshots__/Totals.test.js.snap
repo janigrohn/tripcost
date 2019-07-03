@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot with calculated values  1`] = `
+<div>
+  <div
+    class="sc-bdVaJa yMjtk"
+    data-testid="totals"
+  >
+    <div
+      class="sc-bwzfXH hoiPJK"
+    >
+      <span>
+        Total cost: 
+      </span>
+      <span>
+        41,60
+        €
+      </span>
+    </div>
+    <div
+      class="sc-bwzfXH hoiPJK"
+    >
+      <span>
+        Cost / person: 
+      </span>
+      <span>
+        4,62
+        €
+      </span>
+    </div>
+    <div
+      class="sc-bwzfXH hoiPJK"
+    >
+      <span>
+        Cost / km: 
+      </span>
+      <span>
+        0,09
+        €
+      </span>
+    </div>
+    <div
+      class="sc-bwzfXH hoiPJK"
+    >
+      <span>
+        Fuel needed: 
+      </span>
+      <span>
+        26,8
+        L
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot with zero totals 1`] = `
+<div>
+  <div
+    class="sc-bdVaJa yMjtk"
+    data-testid="totals"
+  >
+    <div
+      class="sc-bwzfXH hoiPJK"
+    >
+      <span>
+        Total cost: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-bwzfXH hoiPJK"
+    >
+      <span>
+        Cost / person: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-bwzfXH hoiPJK"
+    >
+      <span>
+        Cost / km: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-bwzfXH hoiPJK"
+    >
+      <span>
+        Fuel needed: 
+      </span>
+      <span>
+        0,0
+        L
+      </span>
+    </div>
+  </div>
+</div>
+`;

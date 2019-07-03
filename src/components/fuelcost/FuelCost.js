@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import VehicleInfo from './VehicleInfo';
-import RouteSelector from './RouteSelector';
-import PassengersSelector from './PassengersSelector';
-import Totals from './Totals';
+import VehicleInfo from '../VehicleInfo/VehicleInfo';
+import RouteSelector from '../RouteSelector/RouteSelector';
+import PassengersSelector from '../PassengersSelector/PassengersSelector';
+import Totals from '../Totals/Totals';
 import styled from "styled-components";
 import { getVehicle, getRoute, getPassengers } from '../../state/state';
 
@@ -47,21 +47,21 @@ const FuelCost = () => {
 	return (
 		<>
 			<div>
-				<Placeholder inUse={expanded === 'vehicle'} />
+				<Placeholder inUse={expanded === 'vehicle'} data-testid="vehicleinfo-placeholder" />
 				<VehicleInfo
 					toggleExpanded={updateExpanded.bind(null, 'vehicle')}
 					isExpanded={expanded === 'vehicle'}
 					vehicle={vehicle}
 					setVehicle={setVehicle}
 				/>
-				<Placeholder inUse={expanded === 'route'} />
+				<Placeholder inUse={expanded === 'route'} data-testid="routeselector-placeholder" />
 				<RouteSelector
 					toggleExpanded={updateExpanded.bind(null, 'route')}
 					isExpanded={expanded === 'route'}
 					route={route}
 					setRoute={setRoute}
 				/>
-				<Placeholder inUse={expanded === 'passengers'} />
+				<Placeholder inUse={expanded === 'passengers'} data-testid="passengersselector-placeholder" />
 				<PassengersSelector
 					toggleExpanded={updateExpanded.bind(null, 'passengers')}
 					isExpanded={expanded === 'passengers'}
@@ -74,7 +74,11 @@ const FuelCost = () => {
 				route={route}
 				passengers={passengers}
 			/>
-			<Overlay isActive={expanded !== null} onClick={onOverlayClick} />
+			<Overlay
+				isActive={expanded !== null}
+				onClick={onOverlayClick}
+				data-testid="overlay"
+			/>
 		</>
 	);
 };
