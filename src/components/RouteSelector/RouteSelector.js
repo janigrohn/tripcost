@@ -99,7 +99,7 @@ const RouteSelectorFull = ({ route, setRoute, toggleExpanded, morphs }) => {
 		} else if (route.distance >= 50 && route.distance < 1000) {
 			options.min = 0;
 			options.max = 1000;
-			options.step = 5;
+			options.step = 10;
 		} else if (route.distance >= 1000 && route.distance < 5000) {
 			options.min = 0;
 			options.max = 5000;
