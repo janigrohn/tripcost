@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import Totals from '../../components/Totals/Totals';
+import Totals from '../../Components/Totals/Totals';
 
 afterEach(cleanup);
 

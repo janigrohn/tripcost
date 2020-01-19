@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, cleanup, wait } from '@testing-library/react';
 import 'jest-dom/extend-expect';
-import FuelCost from '../../components/FuelCost/FuelCost';
+import FuelCost from '../../Components/FuelCost/FuelCost';
 
 afterEach(cleanup);
 

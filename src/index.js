@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from './Components/App';
 import 'normalize.css';
 import 'react-rangeslider/lib/index.css'
 import './styles/styles.scss';

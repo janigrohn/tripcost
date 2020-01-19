@@ -1,9 +1,9 @@
-import React, { useState } from './node_modules/react';
+import React, { useState } from 'react';
+import styled from "styled-components";
 import VehicleInfo from '../VehicleInfo/VehicleInfo';
 import RouteSelector from '../RouteSelector/RouteSelector';
 import PassengersSelector from '../PassengersSelector/PassengersSelector';
 import Totals from '../Totals/Totals';
-import styled from "./node_modules/styled-components";
 import { getVehicle, getRoute, getPassengers } from '../../state/state';
 
 const Overlay = styled.div`
