@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
 	padding: 0.25rem 0.25rem 0 0.25rem;
 	margin-top: auto;
+	margin-bottom: 1rem;
 `;
 
 const Row = styled.div`

@@ -12,7 +12,7 @@ exports[`matches snapshot 1`] = `
     style="visibility: visible;"
   >
     <button
-      class="sc-bxivhb chosDi"
+      class="sc-bxivhb gFLioE"
       data-testid="vehicleinfo-expand"
     >
       <h2
@@ -51,7 +51,7 @@ exports[`matches snapshot 1`] = `
     style="visibility: visible;"
   >
     <button
-      class="sc-gZMcBi jcWzGb"
+      class="sc-gZMcBi bhQKhQ"
       data-testid="routeselector-expand"
     >
       <h2
@@ -86,7 +86,7 @@ exports[`matches snapshot 1`] = `
     style="visibility: visible;"
   >
     <button
-      class="sc-chPdSV eZRuQf"
+      class="sc-chPdSV fzDXWl"
       data-testid="passengersselector-expand"
     >
       <h2

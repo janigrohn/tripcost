@@ -37,6 +37,11 @@ const headingStyles = css`
 	background: transparent;
 	text-align: left;
 	outline: none !important;
+	user-select: none;
+
+	&:active {
+		color: inherit;
+	}
 `
 
 const Heading = styled.div`

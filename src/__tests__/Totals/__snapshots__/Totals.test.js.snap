@@ -3,7 +3,7 @@
 exports[`matches snapshot with calculated values  1`] = `
 <div>
   <div
-    class="sc-bdVaJa yMjtk"
+    class="sc-bdVaJa hiQrrV"
     data-testid="totals"
   >
     <div
@@ -57,7 +57,7 @@ exports[`matches snapshot with calculated values  1`] = `
 exports[`matches snapshot with zero totals 1`] = `
 <div>
   <div
-    class="sc-bdVaJa yMjtk"
+    class="sc-bdVaJa hiQrrV"
     data-testid="totals"
   >
     <div
