@@ -58,6 +58,7 @@ const Title = styled.h2`
 	align-items: center;
 	margin: 0;
 	font-size: 1.8rem;
+	letter-spacing: -0.5px;
 
 	.title-icon {
 		height: 3.5rem;

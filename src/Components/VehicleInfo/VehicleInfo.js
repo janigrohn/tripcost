@@ -58,6 +58,7 @@ const Title = styled.h2`
 	align-items: center;
 	margin: 0;
 	font-size: 1.8rem;
+	letter-spacing: -0.5px;
 
 	.title-icon {
 		height: 3.5rem;
@@ -126,7 +127,10 @@ const VehicleInfoFull = ({ vehicle, setVehicle, toggleExpanded, morphs }) => {
 			</Heading>
 			<ExpandedContent>
 				<Row>
-					<p>Fuel Consumption: {vehicle.fuelConsumption.toFixed(1)}L/100km</p>
+					<p>
+						<span style={{ display: 'block' }}>Fuel Consumption:</span>
+						<span style={{ display: 'block' }}>{vehicle.fuelConsumption.toFixed(1)}L/100km</span>
+					</p>
 					<div className="vehicle-info__slider rangeslider-wrapper">
 						<Slider
 							min={0}

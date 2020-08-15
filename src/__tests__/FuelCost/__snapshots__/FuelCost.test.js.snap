@@ -16,7 +16,7 @@ exports[`matches snapshot 1`] = `
       data-testid="vehicleinfo-expand"
     >
       <h2
-        class="sc-AxhUy hlZdoe"
+        class="sc-AxhUy evGmHE"
         style="visibility: visible;"
       >
         <svg
@@ -55,7 +55,7 @@ exports[`matches snapshot 1`] = `
       data-testid="routeselector-expand"
     >
       <h2
-        class="sc-fzplWN dMjxUG"
+        class="sc-fzplWN deVens"
         style="visibility: visible;"
       >
         <svg
@@ -90,7 +90,7 @@ exports[`matches snapshot 1`] = `
       data-testid="passengersselector-expand"
     >
       <h2
-        class="sc-fzoLag kJgTUG"
+        class="sc-fzoLag pTNRQ"
         style="visibility: visible;"
       >
         <svg
