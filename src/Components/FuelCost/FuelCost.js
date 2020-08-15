@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from "styled-components";
 import VehicleInfo from '../VehicleInfo/VehicleInfo';
 import RouteSelector from '../RouteSelector/RouteSelector';
@@ -24,7 +25,7 @@ const Placeholder = styled.div`
 	border-radius: 0.5rem;
 `;
 
-const FuelCost = () => {
+const FuelCost = ({ lang }) => {
 	const [expanded, setExpanded] = useState(null);
 	const [vehicle, setVehicle] = useState(getVehicle());
 	const [route, setRoute] = useState(getRoute());
@@ -53,27 +54,35 @@ const FuelCost = () => {
 					isExpanded={expanded === 'vehicle'}
 					vehicle={vehicle}
 					setVehicle={setVehicle}
+					lang={lang}
 				/>
+
 				<Placeholder inUse={expanded === 'route'} data-testid="routeselector-placeholder" />
 				<RouteSelector
 					toggleExpanded={updateExpanded.bind(null, 'route')}
 					isExpanded={expanded === 'route'}
 					route={route}
 					setRoute={setRoute}
+					lang={lang}
 				/>
+
 				<Placeholder inUse={expanded === 'passengers'} data-testid="passengersselector-placeholder" />
 				<PassengersSelector
 					toggleExpanded={updateExpanded.bind(null, 'passengers')}
 					isExpanded={expanded === 'passengers'}
 					passengers={passengers}
 					setPassengers={setPassengers}
+					lang={lang}
 				/>
 			</div>
+
 			<Totals
 				vehicle={vehicle}
 				route={route}
 				passengers={passengers}
+				lang={lang}
 			/>
+
 			<Overlay
 				isActive={expanded !== null}
 				onClick={onOverlayClick}
@@ -81,6 +90,10 @@ const FuelCost = () => {
 			/>
 		</>
 	);
+};
+
+FuelCost.propTypes = {
+	lang: PropTypes.oneOf(['en', 'fi']),
 };
 
 export default FuelCost;
