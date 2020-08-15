@@ -1,6 +1,6 @@
 import React from 'react';
-import { render, fireEvent, cleanup, wait } from '@testing-library/react';
-import 'jest-dom/extend-expect';
+import { render, fireEvent, cleanup, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import FuelCost from '../../Components/FuelCost/FuelCost';
 
 afterEach(cleanup);
@@ -17,7 +17,7 @@ const testTogglingFor = async (name) => {
 	expect(queryAllByTestId(`${name}-full`)).toHaveLength(2);
 	expect(queryAllByTestId(`${name}-small`)).toHaveLength(1);
 	// Wait for react morph animation to end
-	await wait(() => {
+	await waitFor(() => {
 		expect(queryAllByTestId(`${name}-full`)).toHaveLength(1);
 	})
 	// Close via close button
@@ -26,7 +26,7 @@ const testTogglingFor = async (name) => {
 	expect(queryAllByTestId(`${name}-full`)).toHaveLength(1);
 	expect(queryAllByTestId(`${name}-small`)).toHaveLength(2);
 	// Wait for react morph animation to end
-	await wait(() => {
+	await waitFor(() => {
 		expect(queryAllByTestId(`${name}-small`)).toHaveLength(1);
 	})
 	// Expand
@@ -34,7 +34,7 @@ const testTogglingFor = async (name) => {
 	expect(overlay).toHaveStyle('pointer-events: auto');
 	expect(queryAllByTestId(`${name}-full`)).toHaveLength(2);
 	expect(queryAllByTestId(`${name}-small`)).toHaveLength(1);
-	await wait(() => {
+	await waitFor(() => {
 		expect(queryAllByTestId(`${name}-full`)).toHaveLength(1);
 	})
 	// Close via overlay click
@@ -42,7 +42,7 @@ const testTogglingFor = async (name) => {
 	expect(overlay).toHaveStyle('pointer-events: none');
 	expect(queryAllByTestId(`${name}-full`)).toHaveLength(1);
 	expect(queryAllByTestId(`${name}-small`)).toHaveLength(2);
-	await wait(() => {
+	await waitFor(() => {
 		expect(queryAllByTestId(`${name}-small`)).toHaveLength(1);
 	});
 };

@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const WrapperExpanded = styled(Wrapper)`
-	position: fixed;
+	position: absolute;
 	top: 50%;
 	left: 0;
 	right: 0;

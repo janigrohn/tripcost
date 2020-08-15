@@ -3,20 +3,20 @@
 exports[`matches snapshot 1`] = `
 <div>
   <div
-    class="sc-hMqMXs gBmxWA"
+    class="sc-fzqARJ wjjiM"
     data-testid="vehicleinfo-placeholder"
   />
   <div
-    class="sc-bdVaJa hcRbpx"
+    class="sc-AxjAm dekorr"
     data-testid="vehicleinfo-small"
     style="visibility: visible;"
   >
     <button
-      class="sc-bxivhb gFLioE"
+      class="sc-AxhCb bYyHJx"
       data-testid="vehicleinfo-expand"
     >
       <h2
-        class="sc-ifAKCX jBPnsE"
+        class="sc-AxhUy hlZdoe"
         style="visibility: visible;"
       >
         <svg
@@ -42,20 +42,20 @@ exports[`matches snapshot 1`] = `
     </button>
   </div>
   <div
-    class="sc-hMqMXs gBmxWA"
+    class="sc-fzqARJ wjjiM"
     data-testid="routeselector-placeholder"
   />
   <div
-    class="sc-htoDjs irMSuK"
+    class="sc-AxmLO hBPysr"
     data-testid="routeselector-small"
     style="visibility: visible;"
   >
     <button
-      class="sc-gZMcBi bhQKhQ"
+      class="sc-fzpans dxKTiZ"
       data-testid="routeselector-expand"
     >
       <h2
-        class="sc-gqjmRU isJFzg"
+        class="sc-fzplWN dMjxUG"
         style="visibility: visible;"
       >
         <svg
@@ -77,20 +77,20 @@ exports[`matches snapshot 1`] = `
     </button>
   </div>
   <div
-    class="sc-hMqMXs gBmxWA"
+    class="sc-fzqARJ wjjiM"
     data-testid="passengersselector-placeholder"
   />
   <div
-    class="sc-jzJRlG iSBEFz"
+    class="sc-fzokOt bRPoDJ"
     data-testid="passengersselector-small"
     style="visibility: visible;"
   >
     <button
-      class="sc-chPdSV fzDXWl"
+      class="sc-fzoyAV WnsRY"
       data-testid="passengersselector-expand"
     >
       <h2
-        class="sc-kgoBCf knuERX"
+        class="sc-fzoLag kJgTUG"
         style="visibility: visible;"
       >
         <svg
