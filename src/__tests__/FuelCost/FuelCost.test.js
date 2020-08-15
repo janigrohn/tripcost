@@ -47,8 +47,13 @@ const testTogglingFor = async (name) => {
 	});
 };
 
-it('matches snapshot', () => {
-	const { container } = render(<FuelCost />);
+it('matches en snapshot', () => {
+	const { container } = render(<FuelCost lang="en" />);
+	expect(container.firstChild).toMatchSnapshot();
+});
+
+it('matches fi snapshot', () => {
+	const { container } = render(<FuelCost lang="fi" />);
 	expect(container.firstChild).toMatchSnapshot();
 });
 

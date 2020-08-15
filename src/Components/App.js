@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import FuelCost from './FuelCost/FuelCost';
 
@@ -13,9 +13,13 @@ const AppContainer = styled.div`
 `;
 
 const App = () => {
+	const [lang] = useState(() => (
+		localStorage.getItem('app-lang') || 'fi'
+	));
+
 	return (
 		<AppContainer data-testid="app-container">
-			<FuelCost />
+			<FuelCost lang={lang} />
 		</AppContainer>
 	);
 };

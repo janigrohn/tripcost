@@ -3,11 +3,11 @@
 exports[`matches snapshot with calculated values  1`] = `
 <div>
   <div
-    class="sc-bdVaJa hiQrrV"
+    class="sc-AxjAm eOVfrz"
     data-testid="totals"
   >
     <div
-      class="sc-bwzfXH hoiPJK"
+      class="sc-AxirZ eIbaZv"
     >
       <span>
         Total cost: 
@@ -18,7 +18,7 @@ exports[`matches snapshot with calculated values  1`] = `
       </span>
     </div>
     <div
-      class="sc-bwzfXH hoiPJK"
+      class="sc-AxirZ eIbaZv"
     >
       <span>
         Cost / person: 
@@ -29,7 +29,7 @@ exports[`matches snapshot with calculated values  1`] = `
       </span>
     </div>
     <div
-      class="sc-bwzfXH hoiPJK"
+      class="sc-AxirZ eIbaZv"
     >
       <span>
         Cost / km: 
@@ -40,7 +40,169 @@ exports[`matches snapshot with calculated values  1`] = `
       </span>
     </div>
     <div
-      class="sc-bwzfXH hoiPJK"
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Fuel needed: 
+      </span>
+      <span>
+        26,8
+        L
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot with calculated values  2`] = `
+<div>
+  <div
+    class="sc-AxjAm eOVfrz"
+    data-testid="totals"
+  >
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Total cost: 
+      </span>
+      <span>
+        41,60
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / person: 
+      </span>
+      <span>
+        4,62
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / km: 
+      </span>
+      <span>
+        0,09
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Fuel needed: 
+      </span>
+      <span>
+        26,8
+        L
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot with calculated values en 1`] = `
+<div>
+  <div
+    class="sc-AxjAm eOVfrz"
+    data-testid="totals"
+  >
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Total cost: 
+      </span>
+      <span>
+        41,60
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / person: 
+      </span>
+      <span>
+        4,62
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / km: 
+      </span>
+      <span>
+        0,09
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Fuel needed: 
+      </span>
+      <span>
+        26,8
+        L
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot with calculated values fi 1`] = `
+<div>
+  <div
+    class="sc-AxjAm eOVfrz"
+    data-testid="totals"
+  >
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Total cost: 
+      </span>
+      <span>
+        41,60
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / person: 
+      </span>
+      <span>
+        4,62
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / km: 
+      </span>
+      <span>
+        0,09
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
     >
       <span>
         Fuel needed: 
@@ -57,11 +219,11 @@ exports[`matches snapshot with calculated values  1`] = `
 exports[`matches snapshot with zero totals 1`] = `
 <div>
   <div
-    class="sc-bdVaJa hiQrrV"
+    class="sc-AxjAm eOVfrz"
     data-testid="totals"
   >
     <div
-      class="sc-bwzfXH hoiPJK"
+      class="sc-AxirZ eIbaZv"
     >
       <span>
         Total cost: 
@@ -72,7 +234,7 @@ exports[`matches snapshot with zero totals 1`] = `
       </span>
     </div>
     <div
-      class="sc-bwzfXH hoiPJK"
+      class="sc-AxirZ eIbaZv"
     >
       <span>
         Cost / person: 
@@ -83,7 +245,7 @@ exports[`matches snapshot with zero totals 1`] = `
       </span>
     </div>
     <div
-      class="sc-bwzfXH hoiPJK"
+      class="sc-AxirZ eIbaZv"
     >
       <span>
         Cost / km: 
@@ -94,7 +256,169 @@ exports[`matches snapshot with zero totals 1`] = `
       </span>
     </div>
     <div
-      class="sc-bwzfXH hoiPJK"
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Fuel needed: 
+      </span>
+      <span>
+        0,0
+        L
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot with zero totals 2`] = `
+<div>
+  <div
+    class="sc-AxjAm eOVfrz"
+    data-testid="totals"
+  >
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Total cost: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / person: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / km: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Fuel needed: 
+      </span>
+      <span>
+        0,0
+        L
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot with zero totals en 1`] = `
+<div>
+  <div
+    class="sc-AxjAm eOVfrz"
+    data-testid="totals"
+  >
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Total cost: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / person: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / km: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Fuel needed: 
+      </span>
+      <span>
+        0,0
+        L
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot with zero totals fi 1`] = `
+<div>
+  <div
+    class="sc-AxjAm eOVfrz"
+    data-testid="totals"
+  >
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Total cost: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / person: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
+    >
+      <span>
+        Cost / km: 
+      </span>
+      <span>
+        0,00
+        €
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ eIbaZv"
     >
       <span>
         Fuel needed: 

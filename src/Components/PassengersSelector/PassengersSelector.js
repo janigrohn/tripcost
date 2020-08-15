@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from "styled-components";
 import { useMorphKeys } from 'react-morph';
 import Slider from 'react-rangeslider'
+import translations from '../../data/translations';
 
 const Wrapper = styled.div`
 	height: 120px;
@@ -95,13 +96,13 @@ const Row = styled.div`
 `;
 
 
-const PassengersSelectorFull = ({ passengers, setPassengers, toggleExpanded, morphs }) => {
+const PassengersSelectorFull = ({ passengers, setPassengers, toggleExpanded, morphs, lang }) => {
 	return (
 		<WrapperExpanded {...morphs.wrapper} data-testid="passengersselector-full">
 			<Heading>
 				<Title {...morphs.title}>
 					<svg className="title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.118 16.064c2.293-.529 4.428-.993 3.394-2.945-3.146-5.942-.834-9.119 2.488-9.119 3.388 0 5.644 3.299 2.488 9.119-1.065 1.964 1.149 2.427 3.394 2.945 1.986.459 2.118 1.43 2.118 3.111l-.003.825h-15.994c0-2.196-.176-3.407 2.115-3.936zm-10.116 3.936h6.001c-.028-6.542 2.995-3.697 2.995-8.901 0-2.009-1.311-3.099-2.998-3.099-2.492 0-4.226 2.383-1.866 6.839.775 1.464-.825 1.812-2.545 2.209-1.49.344-1.589 1.072-1.589 2.333l.002.619z"/></svg>
-					<span>People</span>
+					<span>{translations.passengersPlural[lang]}</span>
 				</Title>
 				<CloseButton onClick={toggleExpanded} data-testid="passengersselector-close">
 					<svg className="closebtn-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
@@ -109,7 +110,11 @@ const PassengersSelectorFull = ({ passengers, setPassengers, toggleExpanded, mor
 			</Heading>
 			<ExpandedContent>
 				<Row>
-					<p>Passengers: {passengers}</p>
+					<p>
+						{translations.passengers[lang]}
+						{': '}
+						{passengers}
+					</p>
 					<div className="passengers__slider rangeslider-wrapper">
 						<Slider
 							min={1}
@@ -131,13 +136,17 @@ const PassengersSelectorFull = ({ passengers, setPassengers, toggleExpanded, mor
 }
 
 
-const PassengersSelectorSmall = ({ passengers, toggleExpanded, morphs }) => {
+const PassengersSelectorSmall = ({ passengers, toggleExpanded, morphs, lang }) => {
 	return (
 		<Wrapper {...morphs.wrapper} data-testid="passengersselector-small">
 			<HeadingButton onClick={toggleExpanded} data-testid="passengersselector-expand">
 				<Title {...morphs.title}>
 					<svg className="title-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.118 16.064c2.293-.529 4.428-.993 3.394-2.945-3.146-5.942-.834-9.119 2.488-9.119 3.388 0 5.644 3.299 2.488 9.119-1.065 1.964 1.149 2.427 3.394 2.945 1.986.459 2.118 1.43 2.118 3.111l-.003.825h-15.994c0-2.196-.176-3.407 2.115-3.936zm-10.116 3.936h6.001c-.028-6.542 2.995-3.697 2.995-8.901 0-2.009-1.311-3.099-2.998-3.099-2.492 0-4.226 2.383-1.866 6.839.775 1.464-.825 1.812-2.545 2.209-1.49.344-1.589 1.072-1.589 2.333l.002.619z"/></svg>
-					<span>{passengers} {passengers > 1 ? 'persons' : 'person'}</span>
+					<span>
+						{passengers}
+						{' '}
+						{passengers > 1 ? translations.persons[lang] : translations.person[lang]}
+					</span>
 				</Title>
 			</HeadingButton>
 		</Wrapper>
@@ -145,7 +154,7 @@ const PassengersSelectorSmall = ({ passengers, toggleExpanded, morphs }) => {
 }
 
 
-const PassengersSelector = ({ passengers, setPassengers, isExpanded, toggleExpanded }) => {
+const PassengersSelector = ({ passengers, setPassengers, isExpanded, toggleExpanded, lang }) => {
 	const morphs = useMorphKeys([
 		'wrapper',
 		'title'
@@ -155,8 +164,8 @@ const PassengersSelector = ({ passengers, setPassengers, isExpanded, toggleExpan
 
 	return (
 		isExpanded
-			? <PassengersSelectorFull passengers={passengers} setPassengers={setPassengers} toggleExpanded={toggleExpanded} morphs={morphs} />
-			: <PassengersSelectorSmall passengers={passengers} toggleExpanded={toggleExpanded} morphs={morphs} />
+			? <PassengersSelectorFull passengers={passengers} setPassengers={setPassengers} toggleExpanded={toggleExpanded} morphs={morphs} lang={lang} />
+			: <PassengersSelectorSmall passengers={passengers} toggleExpanded={toggleExpanded} morphs={morphs} lang={lang} />
 	);
 };
 
